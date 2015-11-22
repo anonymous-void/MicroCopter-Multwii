@@ -28,6 +28,7 @@ March  2015     V2.4
 
 #include <avr/pgmspace.h>
 
+
 /*********** RC alias *****************/
 
 const char pidnames[] PROGMEM =
@@ -1525,5 +1526,5 @@ void loop () {
   #else
   if ( (f.ARMED) || ((!calibratingG) && (!calibratingA)) ) writeServos();
   #endif 
-  writeMotors();
+  writeMotors();                                                                                                                                                                                                                                                                                                                                                                                              
 }
