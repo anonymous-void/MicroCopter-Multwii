@@ -301,7 +301,7 @@ int16_t servo[8] = {1500,1500,1500,1500,1500,1500,1500,1000};
 // ************************
 static uint8_t dynP8[2], dynD8[2];
 
-global_conf_t global_conf;
+global_conf_t global_conf; // SYM: 全局设置structure, 8 bytes in total
 
 conf_t conf;
 

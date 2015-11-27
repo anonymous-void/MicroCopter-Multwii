@@ -169,7 +169,7 @@ struct servo_conf_ {  // this is a generic way to configure a servo, every multi
   int8_t  rate;       // range [-100;+100] ; can be used to ajust a rate 0-100% and a direction
 };
 
-typedef struct {
+typedef struct { // SYM: conf structure defined here
   pid_    pid[PIDITEMS];
   uint8_t rcRate8;
   uint8_t rcExpo8;
