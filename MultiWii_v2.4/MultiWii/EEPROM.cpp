@@ -29,7 +29,7 @@ bool readEEPROM() {
   int8_t tmp;
   uint8_t y;
 
-  #ifdef MULTIPLE_CONFIGURATION_PROFILES // 最多允许存储两套设置方案
+  #ifdef MULTIPLE_CONFIGURATION_PROFILES // SYM: 最多允许存储两套设置方案
     if(global_conf.currentSet>2) global_conf.currentSet=0;
   #else
     global_conf.currentSet=0;
