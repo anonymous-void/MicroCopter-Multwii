@@ -67,7 +67,8 @@ bool readEEPROM() {
 
 void writeGlobalSet(uint8_t b) {
   global_conf.checksum = calculate_sum((uint8_t*)&global_conf, sizeof(global_conf));
-  eeprom_write_block((const void*)&global_conf, (void*)0, sizeof(global_conf));
+  eeprom_write_block((const void*)&global_conf, (void*)0, sizeof(global_conf)); 
+  // SYM: __global_conf__ start from address 0 of the EEPROM
   if (b == 1) blinkLED(15,20,1);
   SET_ALARM_BUZZER(ALRM_FAC_CONFIRM, ALRM_LVL_CONFIRM_1);
 
@@ -81,7 +82,7 @@ void writeParams(uint8_t b) {
   #endif
   conf.checksum = calculate_sum((uint8_t*)&conf, sizeof(conf));
   eeprom_write_block((const void*)&conf, (void*)(global_conf.currentSet * sizeof(conf) + sizeof(global_conf)), sizeof(conf));
-
+  // SYM: __conf__ start from the address where __global_conf__ ends
 #if GPS
   writeGPSconf();  //Write GPS parameters
   recallGPSconf(); //Read it to ensure correct eeprom content

@@ -148,7 +148,7 @@ typedef struct {
 #endif
 } flags_struct_t;
 
-typedef struct {
+typedef struct { // SYM: 8 byte structure
   uint8_t currentSet;
   int16_t accZero[3];
   int16_t magZero[3];
