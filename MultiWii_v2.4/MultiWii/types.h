@@ -179,10 +179,10 @@ typedef struct { // SYM: conf structure defined here
   uint8_t thrMid8;
   uint8_t thrExpo8;
   int16_t angleTrim[2]; 
-  #if defined(EXTENDED_AUX_STATES)
+  #if defined(EXTENDED_AUX_STATES) // SYM: This has not been defined yet in __config.h__
    uint32_t activate[CHECKBOXITEMS];  //Extended aux states define six different aux state for each aux channel
   #else
-   uint16_t activate[CHECKBOXITEMS];
+   uint16_t activate[CHECKBOXITEMS]; // SYM: shrink to 2 bytes due to undefined __EXTENDED_AUX_STATES__
   #endif 
   uint8_t powerTrigger1;
   #if MAG
