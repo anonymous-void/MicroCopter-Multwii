@@ -8,7 +8,7 @@ void setup() {
     for (address=0; address<EEPROM.length(); address++)
     {
         value = EEPROM.read(address);
-        Serial.print(value, BIN);
+        Serial.print(value, DEC);
         Serial.print("\t");
         if ((address+1)%8 == 0)
             Serial.println("");
