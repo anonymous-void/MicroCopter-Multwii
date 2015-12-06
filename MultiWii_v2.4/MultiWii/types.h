@@ -27,7 +27,7 @@ enum pid {
   PIDLEVEL,
   PIDMAG,
   PIDVEL,     // not used currently
-  PIDITEMS
+  PIDITEMS // SYM: PIDITEMS = 10 !!! not 11 !!!
 };
 
 enum box {
@@ -182,7 +182,7 @@ typedef struct { // SYM: conf structure defined here
   #if defined(EXTENDED_AUX_STATES) // SYM: This has not been defined yet in __config.h__
    uint32_t activate[CHECKBOXITEMS];  //Extended aux states define six different aux state for each aux channel
   #else
-   uint16_t activate[CHECKBOXITEMS]; // SYM: shrink to 2 bytes due to undefined __EXTENDED_AUX_STATES__
+   uint16_t activate[CHECKBOXITEMS]; // SYM:[ACTIVE] shrink to 2 bytes due to undefined __EXTENDED_AUX_STATES__
   #endif 
   uint8_t powerTrigger1;
   #if MAG
